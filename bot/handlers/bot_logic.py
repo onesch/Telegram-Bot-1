@@ -10,7 +10,7 @@ async def info(message: types.Message):
         types.KeyboardButton(
             "Открыть веб страницу",
             web_app=WebAppInfo(
-                url="https://onesch.github.io/telegram-color-picker-bot/web.html"
+                url="https://onesch.github.io/telegram-color-picker-bot/bot/html/web.html"
             ),
         )
     )
