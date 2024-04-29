@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic</title>
+<style>
+    /* Стилизация фона */
+    body {
+        background-color: #232b38;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* чтобы предотвратить прокрутку страницы */
+        color: #d2dbe3; /* цвет текста */
+        
+    }
+    /* Стилизация круга */
+    .circle-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .circle {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+    }
+
+
+    .circle-text {
+        position: absolute;
+        top: -80px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: Verdana, sans-serif; /* Шрифт */
+        font-size: 30px;
+        user-select: none; /* отключаем выделение текста */
+        pointer-events: none; /* отключаем событие клика для текста */
+    }
+
+    /* Стилизация вывода HEX */
+    .hex-text {
+        margin-top: 40px;
+        user-select: none; /* отключаем выделение текста */
+
+    }
+    
+</style>
+</head>
+<body>
+
+<div class="circle-container">
+    <div class="circle" onclick="incrementNumber()">
+        <span class="circle-text">0</span>
+    </div>
+    <div class="hex-text" id="hexText">click me!</div> <!-- Добавлено для вывода HEX -->
+</div>
+
+<script>
+    let number = 0;
+    function incrementNumber() {
+        number++;
+        document.querySelector('.circle-text').textContent = number;
+        let circle = document.querySelector('.circle');
+        let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16); // Генерация случайного цвета в формате HEX
+        circle.style.backgroundColor = randomColor; // Применение случайного цвета кругу
+        document.getElementById('hexText').textContent = randomColor; // Вывод HEX под кругом
+    }
+</script>
+
+</body>
+</html>
