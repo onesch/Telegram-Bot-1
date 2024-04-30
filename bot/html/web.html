@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Basic</title>
+<title>Clicker</title>
 <style>
     /* Стилизация фона */
     body {
         background-color: #232b38;
         margin: 0;
         padding: 0;
-        overflow: hidden; /* чтобы предотвратить прокрутку страницы */
-        color: #d2dbe3; /* цвет текста */
+        overflow: hidden;
+        color: #d2dbe3;
         
     }
     /* Стилизация круга */
@@ -30,24 +30,24 @@
         border-radius: 50%;
         position: relative;
         cursor: pointer;
+        transition: background-color 0.3s ease;
     }
-
 
     .circle-text {
         position: absolute;
         top: -80px;
         left: 50%;
         transform: translateX(-50%);
-        font-family: Verdana, sans-serif; /* Шрифт */
+        font-family: Verdana, sans-serif; 
         font-size: 30px;
-        user-select: none; /* отключаем выделение текста */
-        pointer-events: none; /* отключаем событие клика для текста */
+        user-select: none; 
+        pointer-events: none;
     }
 
     /* Стилизация вывода HEX */
     .hex-text {
         margin-top: 40px;
-        user-select: none; /* отключаем выделение текста */
+        user-select: none; 
 
     }
     
@@ -59,8 +59,13 @@
     <div class="circle" onclick="incrementNumber()">
         <span class="circle-text">0</span>
     </div>
-    <div class="hex-text" id="hexText">click me!</div> <!-- Добавлено для вывода HEX -->
+    <div class="hex-text" id="hexText">click me!</div> 
 </div>
+
+<audio id="clickSound">
+    <source src="sound/click.wav" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
 <script>
     let number = 0;
@@ -68,9 +73,12 @@
         number++;
         document.querySelector('.circle-text').textContent = number;
         let circle = document.querySelector('.circle');
-        let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16); // Генерация случайного цвета в формате HEX
+        let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16); // Генерация случайного цвета HEX
         circle.style.backgroundColor = randomColor; // Применение случайного цвета кругу
         document.getElementById('hexText').textContent = randomColor; // Вывод HEX под кругом
+
+        let clickSound = document.getElementById('clickSound');
+        clickSound.play();
     }
 </script>
 
