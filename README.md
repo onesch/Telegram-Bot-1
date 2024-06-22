@@ -12,7 +12,7 @@
 2. Click on the `Открыть веб страницу` button to open the web page in Telegram.
 3. On the opened web page, click on the circle to generate a new color and see its HEX value.
 
-If you have any suggestions, please contact @xAvakov via Telegram.
+If you have any suggestions, please contact via [Telegram](https://t.me/xAvakov).
 
 #
 
@@ -33,5 +33,5 @@ If you have any suggestions, please contact @xAvakov via Telegram.
 2. Нажмите на кнопку `Открыть веб страницу`, чтобы открыть веб-страницу в Telegram.
 3. На открывшейся веб-странице кликните на круг, чтобы сгенерировать новый цвет и увидеть его HEX-значение.
 
-Если у вас есть какие-либо предложения, обратитесь к @xAvakov через Telegram.
+Если у вас есть какие-либо предложения, свяжитесь через [Telegram](https://t.me/xAvakov).
 
